@@ -35,6 +35,7 @@ fig_sesu = ggplot2::ggplot(data = sesu_q, ggplot2::aes(x = su)) +
     axis.text.y.left = ggplot2::element_text(color = "#f8766d"),
     axis.text = ggplot2::element_text(family = "TNR"),
     axis.title = ggplot2::element_text(family = "TNR"),
+    panel.grid = ggplot2::element_blank(),
     legend.text = ggplot2::element_text(family = "TNR"),
     legend.position = "inside",
     legend.justification = c('left','bottom'),
