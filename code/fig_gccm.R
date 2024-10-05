@@ -3,7 +3,7 @@ df = readr::read_csv('./data/GCCM_NTU_UCEE.csv')
 windowsFonts(TNR = windowsFont("Times New Roman"))
 
 fig_gccm = ggplot2::ggplot(data = df,
-                ggplot2::aes(x = lib_sizes)) +
+                           ggplot2::aes(x = lib_sizes)) +
   ggplot2::geom_line(ggplot2::aes(y = x_xmap_y_means,
                                   color = "x xmap y"),
                       lwd = 1.25) +
