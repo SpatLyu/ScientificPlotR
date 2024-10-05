@@ -9,7 +9,7 @@ df = readr::read_csv('./data/GCCM_NTU_UCEE.csv')
 windowsFonts(TNR = windowsFont("Times New Roman"))
 
 fig_gccm = ggplot2::ggplot(data = df,
-                ggplot2::aes(x = lib_sizes)) +
+                           ggplot2::aes(x = lib_sizes)) +
   ggplot2::geom_line(ggplot2::aes(y = x_xmap_y_means,
                                   color = "x xmap y"),
                       lwd = 1.25) +
@@ -32,7 +32,8 @@ fig_gccm = ggplot2::ggplot(data = df,
                  legend.position = "inside",
                  legend.justification = c('right','top'),
                  legend.background = ggplot2::element_rect(fill = 'transparent'),
-                 legend.text = ggplot2::element_text(family = "TNR"))
+                 legend.text = ggplot2::element_text(family = "TNR")) +
+  ggview::canvas(width = 5.5,height = 4.25)
 ```
 
 ![](./figure/fig_gccm.png)
@@ -82,7 +83,8 @@ fig_sesu = ggplot2::ggplot(data = sesu_q, ggplot2::aes(x = su)) +
     legend.position = "inside",
     legend.justification = c('left','bottom'),
     legend.background = ggplot2::element_rect(fill = 'transparent')
-  )
+  ) +
+  ggview::canvas(width = 6.25,height = 4.25)
 ```
 
 ![](./figure/fig_sesu.png)
