@@ -40,8 +40,10 @@ fig_sesu = ggplot2::ggplot(data = sesu_q, ggplot2::aes(x = su)) +
     legend.position = "inside",
     legend.justification = c('left','bottom'),
     legend.background = ggplot2::element_rect(fill = 'transparent')
-  )
+  ) +
+  ggview::canvas(width = 6.25,height = 4.25)
 
-ggview::ggview(fig_sesu,width = 6.25,height = 4.25)
+# ggview:::ggview(fig_sesu,width = 6.25,height = 4.25)
+# ggplot2::ggsave('./figure/fig_sesu.png',width = 6.25,height = 4.25,dpi=300)
 
-ggplot2::ggsave('./figure/fig_sesu.png',width = 6.25,height = 4.25,dpi=300)
+ggview::save_ggplot(fig_sesu,'./figure/fig_sesu.png')
