@@ -26,8 +26,10 @@ fig_gccm = ggplot2::ggplot(data = df,
                  legend.position = "inside",
                  legend.justification = c('right','top'),
                  legend.background = ggplot2::element_rect(fill = 'transparent'),
-                 legend.text = ggplot2::element_text(family = "TNR"))
+                 legend.text = ggplot2::element_text(family = "TNR")) +
+  ggview::canvas(width = 5.5,height = 4.25)
 
-ggview::ggview(fig_gccm,width = 5.5,height = 4.25)
+# ggview:::ggview(fig_gccm,width = 5.5,height = 4.25)
+# ggplot2::ggsave('./figure/fig_gccm.png',width = 5.5,height = 4.25,dpi=300)
 
-ggplot2::ggsave('./figure/fig_gccm.png',width = 5.5,height = 4.25,dpi=300)
+ggview::save_ggplot(fig_gccm,'./figure/fig_gccm.png')
