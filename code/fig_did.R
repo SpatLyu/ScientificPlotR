@@ -2,7 +2,7 @@ windowsFonts(TNR = windowsFont("Times New Roman"))
 
 did_coef = readr::read_csv('./data/DID_Treat.csv')
 
-fig1 = ggplot2::ggplot(did_coef, ggplot2::aes(x = term, 
+fig_did = ggplot2::ggplot(did_coef, ggplot2::aes(x = term, 
                                               y = estimate)) +
   ggplot2::geom_point(size = 3, color = "blue") +
   ggplot2::geom_errorbar(ggplot2::aes(ymin = conf.low, 
@@ -16,4 +16,4 @@ fig1 = ggplot2::ggplot(did_coef, ggplot2::aes(x = term,
                  axis.title = ggplot2::element_text(family = "TNR")) +
   ggview::canvas(width = 6, height = 4.25, bg = 'transparent')
 
-ggview::save_ggplot(fig1,'./figure/fig_did.png')
+ggview::save_ggplot(fig_did,'./figure/fig_did.png')
